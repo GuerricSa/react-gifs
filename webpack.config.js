@@ -4,34 +4,34 @@ const path = require('path');
 module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: '!!html-loader!templates/index.html'
-    })
+      template: '!!html-loader!templates/index.html',
+    }),
   ],
-  devtool: 'sourcemap',
-  mode: "development",
+  devtool: 'eval-cheap-module-source-map', // Updated devtool configuration
+  mode: 'development',
   module: {
     rules: [
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        loader: 'babel-loader'
+        use: 'babel-loader', // Replaced 'loader' with 'use'
       },
       {
         test: /\.s?css$/,
         exclude: /node_modules/,
-        loaders: [ 'style-loader', 'css-loader', 'sass-loader' ]
+        use: ['style-loader', 'css-loader', 'sass-loader'], // Replaced 'loaders' with 'use'
       },
       {
         test: /\.html$/,
-        loader: 'html-loader'
+        use: 'html-loader', // Replaced 'loader' with 'use'
       },
-    ]
+    ],
   },
   resolve: {
-    extensions: [ '.js', '.jsx' ]
-  }
+    extensions: ['.js', '.jsx'],
+  },
 };
