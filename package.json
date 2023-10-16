@@ -30,6 +30,7 @@
     "chokidar": "3",
     "core-js": "3",
     "fsevents": "2",
+    "giphy-api": "^2.0.2",
     "glob-parent": "^5.1.2",
     "json5": "^1.0.2",
     "node-forge": "^1.2.1",
