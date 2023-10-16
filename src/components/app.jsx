@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import SearchBar from './searchBar';
+import SearchBar from './search_bar';
 import Gif from './gif';
-import GifList from './gifList';
+import GifList from './gif_list';
 import giphy from 'giphy-api';
 
 class App extends Component {
@@ -41,7 +41,7 @@ class App extends Component {
           </div>
         </div>
         <div className="right-scene">
-          <GifList gifs={this.state.gifs} displayFonction={this.displayGif} />
+          <GifList gifs={this.state.gifs} displayFunction={this.displayGif} />
         </div>
       </div>
     );

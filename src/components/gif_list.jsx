@@ -3,7 +3,11 @@ import Gif from './gif';
 
 class GifList extends Component {
   renderList = () => {
-    return this.props.gifs.map(gif => <Gif id={gif.id} key={gif.id} displayFonction={this.props.displayFonction} />);
+    // Destructuring
+    const { gifs, displayFunction } = this.props;
+
+    // function
+    return gifs.map(gif => <Gif id={gif.id} key={gif.id} displayFunction={displayFunction} />);
   }
 
   render () {
@@ -14,6 +18,5 @@ class GifList extends Component {
     );
   }
 }
-
 
 export default GifList;
